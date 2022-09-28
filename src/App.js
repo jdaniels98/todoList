@@ -1,10 +1,10 @@
 import './App.css';
-import ConditionDemo from './components/NoteInput';
+import NoteEdit from './components/NoteInput';
 
 function App() {
   return (
     <div className="main">
-      <ConditionDemo />
+      <NoteEdit />
     </div>
   );
 }

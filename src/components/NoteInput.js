@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const ConditionDemo = () => {
+const NoteEdit = () => {
     const [list, setList] = useState(["red", "green"])
     const [input, setInput] = useState("")
     
@@ -45,4 +45,4 @@ const ConditionDemo = () => {
     )
 }
 
-export default ConditionDemo
+export default NoteEdit
