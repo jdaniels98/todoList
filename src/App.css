@@ -1,27 +1,86 @@
-body {
-  background-repeat: no-repeat;
+* {
+  margin: 0;
 }
-
-.main {
-  margin: 0 auto;
-  padding: 0 15px;
-  min-height: 100vh;
-}
-
-.header {
+#main {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+}
+header {
+  background-color: #aaaaaa;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  height: 12.5vh;
+  width: 50vw;
+  margin-left: 25%;
+  margin-right: 25%;
 }
-
-.notes {
-  margin: 0 auto;
+#noteEdit {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  margin-left: 25%;
+  margin-right: 25%;
 }
-
-.title {
+form {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  margin-right: 25%;
+}
+form button {
+  height: 25px;
+  margin-top: 15px;
+}
+::placeholder {
+  font-weight: bold;
+  font-style: italic;
   color: white;
-  font-size: 38px;
-  font-weight: 400;
+}
+#removeButton {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+body {
+  background-color: #333333;
+}
+p {
+  color: white;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+button {
+  font-weight: bold;
+  padding: 7px;
+  padding-top: 0px;
+  text-align: center;
+  width: 95px;
+  margin-top: 0;
+  margin-right: 5px;
+  font-size: 12px;
+  background-color: #333333;
+  border-color: transparent;
+  color: white;
+}
+button:hover {
+  cursor: pointer;
+  color: yellow;
+}
+p:hover {
+  cursor: pointer;
+}
+#addbtn {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 175px;
+}
+input {
+  margin: 15px;
+  height: 20px;
+  width: 50vh;
+  color: white;
+  background-color: #333333;
+  border-color: #333333;
 }
