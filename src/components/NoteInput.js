@@ -43,11 +43,11 @@ const NoteEdit = () => {
 
     const completeItem = (index) => {
         const temp = [...list];
-        const removedItem = temp.splice(index, 1);
+        const removedItem = temp.splice(index, 1)
         setList(temp);
         const temp2 = [...list2];
-        temp2.push(...removedItem)
-        setList2(temp2)
+        temp2.push(removedItem);
+        setList2(temp2)   
     }
 
     const addItem = (e) => {
@@ -83,7 +83,7 @@ const NoteEdit = () => {
                         • {item}
                     </i>
                     <div>
-                        <button id="completeButton" onClick={completeItem}>COMPLETE</button>
+                        <button id="completeButton" onClick={() => completeItem(index)}>COMPLETE</button>
                         <button id="removeButton" onClick={() => deleteItem(index)}>REMOVE</button>
                     </div>
                 </p>
