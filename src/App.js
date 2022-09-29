@@ -1,15 +1,16 @@
 import './App.css';
 import NoteEdit from './components/NoteInput';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div id="main">
-      <header>
-        <h1>NOTEPAD</h1>
-      </header>
+      <Header />
       <div id="noteEdit">
         <NoteEdit />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,55 +1,38 @@
 * {
   margin: 0;
 }
+html, body {
+  height: 100vh;
+  background-color: #898989;
+}
 #main {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-header {
-  background-color: #aaaaaa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 12.5vh;
-  width: 50vw;
-  margin-left: 25%;
-  margin-right: 25%;
-}
 #noteEdit {
   display: flex;
   justify-content: center;
   width: 50vw;
-  margin-left: 25%;
-  margin-right: 25%;
 }
-form {
+
+header {
+  background-color: black;
+  color: white;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12.5vh;
+  width: 70vw;
+  margin-left: 15%;
+}
+
+#container {
+  display:flex;
   flex-direction: row;
-  width: 50vw;
-  margin-right: 25%;
-}
-form button {
-  height: 25px;
-  margin-top: 15px;
-}
-::placeholder {
-  font-weight: bold;
-  font-style: italic;
-  color: white;
-}
-#removeButton {
-  display: flex;
-  justify-content: flex-end;
-  text-decoration: none;
-}
-body {
-  background-color: #333333;
-}
-p {
-  color: white;
-  margin-top: 10px;
-  margin-left: 15px;
+  justify-content: space-between;
+  width: 80vw;
+  padding:20px;
 }
 button {
   font-weight: bold;
@@ -68,13 +51,43 @@ button:hover {
   cursor: pointer;
   color: yellow;
 }
+p {
+  color: white;
+  margin-top: 10px;
+  margin-left: 15px;
+}
 p:hover {
   cursor: pointer;
 }
-#addbtn {
+i {
+  font-style: normal;
+}
+h2 {
+  color: white;
+  text-decoration: underline;
+}
+#todolist {
   display: flex;
-  justify-content: flex-start;
-  margin-right: 175px;
+  flex-direction: column;
+  margin-left: 40%;
+  margin-right: 0;
+  border: solid white;
+  border-width: 1 1px;
+  padding: 15px;
+  background-color: #333333;
+}
+#todolist h2 {
+  margin-left: 1vw;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  margin-right: 25%;
+}
+form button {
+  height: 25px;
+  margin-top: 15px;
 }
 input {
   margin: 15px;
@@ -83,4 +96,66 @@ input {
   color: white;
   background-color: #333333;
   border-color: #333333;
+}
+::placeholder {
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+#clrbtn {
+  display: flex;
+  justify-content: flex-end;
+}
+#removeButton {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 10px;
+}
+#completeButton {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 10px;
+}
+#donelist {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+  border: solid white;
+  border-width: 1 1px;
+  padding: 15px;
+  background-color: #333333;
+}
+#donelist h2 {
+  margin-bottom: 15px;
+}
+#doneclearlist {
+  margin-left: 12px;
+}
+#addbtn {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 25px;
+}
+#removeButton {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+
+footer {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 12.5vh;
+  width: 70vw;
+  margin-left: 15%;
+  font-size: 12px;
+}
+#footertext2 {
+  margin-right: 15px;
 }
