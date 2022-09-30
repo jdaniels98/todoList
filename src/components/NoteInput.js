@@ -4,6 +4,9 @@ const NoteEdit = () => {
     const [list, setList] = useState([])
     const [list2, setList2] = useState([])
     const [input, setInput] = useState("")
+    const [edit, setEdit] = useState(false);
+    const [selected, setSelected] = useState("");
+    const [newInput, setNewInput] = useState("");
     
     const crossOutItem = (event) => {
         if(event.target.style.textDecoration) {
@@ -13,6 +16,21 @@ const NoteEdit = () => {
             event.target.style.setProperty('text-decoration', 'line-through')
             event.target.style.setProperty('color', 'yellow')
         }
+    }
+
+    const editItem = (index) => {
+        if (!edit) {
+            setEdit(true)
+            setSelected(list[index])
+        } else {
+            setEdit(false)
+            if (newInput !== "") {
+                const temp = [...list]
+                temp[index] = newInput
+                setList(temp)
+            }
+        }
+        setNewInput("")
     }
     
     const deleteItem = (index) => {
@@ -60,9 +78,8 @@ const NoteEdit = () => {
 
     return (
         <div id="container">
-
             <div id="todolist">
-                <h2>TO-DO LIST</h2>
+                <h2>TO-DO</h2>
                 <form onSubmit={addItem}>
                     <input
                     id="inputtoList"
@@ -71,20 +88,33 @@ const NoteEdit = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     required/>
-                    <button id="addbtn" onClick={validateInput}>ADD</button>
-                    <button id="clrbtn" onClick={() => deleteArray()}>CLEAR</button>
+                    <button id="addbtn" onClick={validateInput}>ADD ITEM</button>
+                    <button id="clrbtn" onClick={() => deleteArray()}>CLEAR LIST</button>
                 </form>
                 {list.map((item, index) => {
                 return (
                 <p 
                 key={item}>
-                    <i 
-                    onClick={crossOutItem}>
-                        • {item}
-                    </i>
+                    {edit && selected === item ? (
+                        <input
+                        type="text"
+                        defaultValue={item}
+                        onChange={(e) => setNewInput(e.target.value)}
+                        />
+                    ) : (
+                        <i 
+                        onClick={crossOutItem}
+                        onDoubleClick={() => deleteItem(index)}
+                        >
+                            • {item}
+                        </i>
+                    )}
+
                     <div>
+                        <button id="removeButton" onClick={() => editItem(index)}>
+                            {edit ? "SAVE" : "EDIT"}
+                        </button>
                         <button id="completeButton" onClick={() => completeItem(index)}>COMPLETE</button>
-                        <button id="removeButton" onClick={() => deleteItem(index)}>REMOVE</button>
                     </div>
                 </p>
                 )
@@ -92,7 +122,7 @@ const NoteEdit = () => {
             </div>
 
             <div id="donelist">
-                <h2>COMPLETE <button id="doneclearlist" onClick={() => deleteArray2()}>CLEAR</button></h2>
+                <h2>COMPLETE <button id="doneclearlist" onClick={() => deleteArray2()}>CLEAR LIST</button></h2>
                 {list2.map((item, index) => {
                     return (
                             <p key={item} onDoubleClick={() => deleteItem2(index)}>• {item}</p>
